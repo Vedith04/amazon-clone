@@ -1,0 +1,7 @@
+.imageSlides{
+    margin-bottom: -200px;
+    z-index: -1;
+}
+.img1{
+    mask-image: linear-gradient(to bottom,rgb(0,0,1),rgb(0,0,0));
+}

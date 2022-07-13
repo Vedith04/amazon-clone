@@ -1,0 +1,26 @@
+<div class="cart_page" style="box-sizing: border-box;">
+    <div class="row p-3">
+        <div class="col-md-9 cart_save_items">
+            <div class="cart_empty" *ngIf="checkCartEmpty()==0 else nonEmptyCart">
+                <div class="card p-5" style="height: 250px;">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="https://m.media-amazon.com/images/G/31/cart/empty/kettle-desaturated._CB424694257_.svg" alt="">
+                        </div>
+                        <div class="col-sm-8" style="display: flex; flex-direction: column;">
+                            <h4>Your Amazon Basket is empty</h4>
+                            <a href="#"><small>Shop today's deals</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #nonEmptyCart>
+                <app-cart-items-checkout [checkout_products]="items" (deleteEvent)="deleteEventHandler($event)"></app-cart-items-checkout>
+            </ng-template>
+        
+        </div>
+        <div class="col-md-3 checkout_total">
+            <app-checkout-total-cart></app-checkout-total-cart>
+        </div>
+    </div>
+</div>

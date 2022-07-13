@@ -1,0 +1,110 @@
+<!--
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <div class="header">
+        <a href="#" class="navbar-brand">
+            <img src="https://www.pngmart.com/files/Amazon-Logo-Download-PNG-Image.png" alt="" class="logo">
+        </a>
+        <div class="searchBar" style="margin-right: 10px;  height:38px">
+            <input type="search" class="form-control" name="search" style=" width:100%; min-width:600px; border-top-right-radius: 0;border-bottom-right-radius: 0;">
+            <button class="btn" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="list-items">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#coll">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="coll">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: white; font-size: 13px;">
+                            <div class="navbarlink">
+                                <span>Hello, Sign in</span>
+                                <span style="font-weight: bolder;">Accounts & Lists</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" style="color: white; font-size: 13px;">
+                            <div class="navbarlink">
+                                <span>Returns</span>
+                                <span style="font-weight: bolder;">& Orders</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="navbarlink1" style="display: flex;">
+                                <i class="fas fa-shopping-cart fa-2x"></i>
+                                <span class="badge" style="color: #f08804;">0</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+-->
+<div class="navigation-bar">
+    <nav class="header">
+        <div class="header-items">
+
+            <a routerLink="/">
+                <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White2.png" alt=""
+                class="nav-logo">
+            </a>
+
+            <div class="search-bar">
+                <input type="text" class="search-bar-input">
+                <button type="button" class="search-bar-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="header-end-items">
+                <ul class="header-end-items-list">
+                    <li>
+                        <ng-container *ngIf="authService.currentUser$ | async as user; else loginUser">
+                            <a routerLink="/" (click)="logout()">
+                                <div class="list-item">
+                                    <span class="header-small-items">{{user.email}}, Sign out</span>
+                                    <span class="header-large-items">Accounts & Lists</span>
+                                </div>
+                            </a>
+                        </ng-container>
+                        <ng-template #loginUser>
+                            <a routerLink="/login">
+                                <div class="list-item">
+                                    <span class="header-small-items">Hello, Sign in</span>
+                                    <span class="header-large-items">Accounts & Lists</span>
+                                </div>
+                            </a>
+                        </ng-template>
+                    </li>
+                    <li>
+                        <a routerLink="/login">
+                            <div class="list-item">
+                                <span class="header-small-items">Returns</span>
+                                <span class="header-large-items">& Orders</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/cart" style="display: flex;">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                            <span class="badge" style="color: #f08804;">{{shoppingCart.getCartItemsLength()}}</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</div>
+<nav class="header2">
+    <span></span>
+</nav>

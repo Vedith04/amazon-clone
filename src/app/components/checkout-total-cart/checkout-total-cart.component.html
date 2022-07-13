@@ -1,0 +1,22 @@
+<div class="card" *ngIf="getCartItemLength()>0">
+    <div class="card-body">
+        <div class="card-start" style="color: green; display: flex;">
+            <i class="fas fa-check-circle"></i>
+            <div style="display: flex; flex-direction: column; font-size: 15px; margin-left: 5px;">
+                <small s>Your order is eligible for FREE Delivery.</small>
+                <small>this option at checkout. Details</small>
+            </div>
+        </div>
+        <br>
+        <div class="subtotal" style="font-size: 20px;">
+            <p>Subtotal ({{userCartApi.getCartItemsLength()}} items): <strong>Rs.{{userCartApi.getSubTotalPrice()}}</strong></p>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="subtotalcheck">
+            <label for="subtotalcheck" class="form-check-label"><small>This order contains a gift</small></label>
+        </div>
+        <button type="button" style="height: 34px; width: 100%; border-radius: 10px; background-color: rgb(243, 243, 45); border: 1px solid rgb(255, 255, 49);">
+            <small>Proceed to buy</small>
+        </button>
+    </div>
+</div>

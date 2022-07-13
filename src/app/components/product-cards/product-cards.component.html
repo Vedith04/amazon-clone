@@ -1,0 +1,14 @@
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4" style="justify-content: center;">
+    <div class="card" style="margin: 10px;" *ngFor="let product of productsData">
+        <h5 class="card-title" style="text-align: center; margin-top: 5px;">{{product.title}}</h5>
+        <img src="{{product.image}}" alt="" style="height:200px; object-fit: contain;">
+        <div class="card-body" style="display:flex; flex-direction: column; align-items: center;">
+            <p class="card-text text-muted">Rs. {{product.price}}</p>
+            <button class="addToCartBtn" (click)="addToCart(product)" type="button" style="border-radius: 3px; width: 100px; 
+                        background-color:rgb(255, 226, 62); border: 1px solid rgb(255, 217, 0);">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+

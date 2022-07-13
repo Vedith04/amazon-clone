@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-3c962": {
+      "hosting": {
+        "amazon-clone": [
+          "fir-3c962"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-3c962"
+  }
+}
